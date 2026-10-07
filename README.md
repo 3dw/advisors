@@ -21,6 +21,8 @@
 | 工程技術顧問 | [`personas/engineering-advisor.md`](personas/engineering-advisor.md) | 技術選型、系統設計與工程實務取捨 |
 | 法務顧問 | [`personas/legal-advisor.md`](personas/legal-advisor.md) | 白話解讀法律風險、備妥與律師溝通的問題 |
 | 溝通顧問 | [`personas/communication-advisor.md`](personas/communication-advisor.md) | 用薩提爾模式兼顧雙方感受與事情本身，把難談的對話談成雙贏 |
+| 教學顧問 | [`personas/teaching-advisor.md`](personas/teaching-advisor.md) | 把學習目標轉化成可實施、可評量的課程與教學活動 |
+| 影片設計顧問 | [`personas/video-design-advisor.md`](personas/video-design-advisor.md) | 把溝通目標轉化成可製作的影片概念、腳本、分鏡與剪輯方案 |
 
 > 財務、法務、人資、溝通等角色提供的是一般性資訊與教育，非正式專業意見；重大決策請諮詢合格的會計師、律師、心理師或相關專業人士。
 
