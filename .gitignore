@@ -13,6 +13,7 @@
 
 # 個別影片專用素材與製作腳本留在本機
 /factories/mv/assets/civic-talk-*
+/factories/mv/assets/feeling-guarantee-*
 /factories/mv/scripts/compose-song.py
 /factories/mv/scripts/add-logo.mjs
 /factories/mv/requirements-song.txt
