@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>本機音訊光環</title>
+  <style>html,body{margin:0;overflow:hidden}canvas{display:block}</style>
+  <script src="/vendor/p5.min.js"></script>
+</head>
+<body>
+<script>
+p5.disableFriendlyErrors = true;
+new p5(p => {
+  p.setup = () => {
+    p.pixelDensity(1);
+    p.createCanvas(1280, 720);
+    p.noLoop();
+    p.noiseSeed(42);
+    window.renderFrame = ({ time, width, height, level }) => {
+      if (p.width !== width || p.height !== height) p.resizeCanvas(width, height, true);
+      p.background('#10192c');
+      const energy = Math.min(1, level * 8);
+      const unit = Math.min(width, height);
+      p.push();
+      p.translate(width / 2, height / 2);
+      p.noFill();
+      for (let layer = 0; layer < 4; layer++) {
+        p.stroke(82 + layer * 25, 205 - layer * 15, 220, 160 - layer * 22);
+        p.strokeWeight(Math.max(1, unit / 400));
+        p.beginShape();
+        for (let point = 0; point <= 180; point++) {
+          const angle = point / 180 * Math.PI * 2;
+          const ripple = Math.sin(angle * 6 + time * 3 + layer) * energy * unit * 0.025;
+          const radius = unit * (0.17 + layer * 0.035) + ripple + energy * unit * 0.04;
+          p.vertex(Math.cos(angle) * radius, Math.sin(angle) * radius);
+        }
+        p.endShape(p.CLOSE);
+      }
+      p.noStroke();
+      for (let particle = 0; particle < 90; particle++) {
+        const angle = particle * 2.399963 + time * (particle % 2 ? 0.08 : -0.08);
+        const radius = unit * (0.08 + p.noise(particle) * 0.37);
+        p.fill(240, 197, 130, 100 + 100 * energy);
+        p.circle(Math.cos(angle) * radius, Math.sin(angle) * radius, Math.max(1, unit / 180) * (1 + energy));
+      }
+      p.pop();
+    };
+    window.mvReady = true;
+  };
+}, document.body);
+</script>
+</body>
+</html>

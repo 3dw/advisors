@@ -1,0 +1,16 @@
+{
+  "name": "local-p5-mv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.21.0"
+  },
+  "scripts": {
+    "render": "node scripts/run.mjs"
+  },
+  "dependencies": {
+    "p5": "1.11.3",
+    "puppeteer-core": "25.13.0"
+  }
+}

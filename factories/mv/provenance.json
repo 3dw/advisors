@@ -1,0 +1,74 @@
+{
+  "repository": "NousResearch/hermes-agent",
+  "repositoryUrl": "https://github.com/NousResearch/hermes-agent",
+  "commit": "e4d86423856350825a3a0dc4f52aed89759e11bd",
+  "commitUrl": "https://github.com/NousResearch/hermes-agent/tree/e4d86423856350825a3a0dc4f52aed89759e11bd",
+  "upstreamSkillPath": "skills/creative/p5js/SKILL.md",
+  "upstreamSkillUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/skills/creative/p5js/SKILL.md",
+  "upstreamLicense": {
+    "name": "MIT",
+    "path": "LICENSE",
+    "sourceUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/LICENSE",
+    "savedPath": "skills/p5js/LICENSE",
+    "copyright": "Copyright (c) 2025 Nous Research",
+    "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+    "bytes": 1070
+  },
+  "demoAudio": {
+    "path": "assets/demo-tone.wav",
+    "created": "2026-10-13",
+    "description": "本專案使用 FFmpeg 合成的 440 Hz 純正弦測試音，長度 2 秒、48 kHz、單聲道 PCM 16-bit；不含第三方錄音、取樣或歌曲。",
+    "generationCommand": "ffmpeg -v error -y -f lavfi -i sine=frequency=440:sample_rate=48000:duration=2 -af afade=t=in:st=0:d=0.1,afade=t=out:st=1.8:d=0.2 -c:a pcm_s16le assets/demo-tone.wav",
+    "sha256": "bad00e137112cd8748624204bd8ca13d639a0857c8bb0f54ea6c7255daf79763"
+  },
+  "downloadedFiles": [
+    {
+      "path": "skills/p5js/references/core-api.md",
+      "sourceUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/skills/creative/p5js/references/core-api.md",
+      "sha256": "8b1278b31bd4e003cb093da1858e4d0753eb304540c8f4e8e567c682222753e7",
+      "bytes": 9841
+    },
+    {
+      "path": "skills/p5js/references/animation.md",
+      "sourceUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/skills/creative/p5js/references/animation.md",
+      "sha256": "7b71c1fd7c7778bfe3e348e49ae8b4cae59c5eb730a42d9b603acce7801bbe57",
+      "bytes": 10456
+    },
+    {
+      "path": "skills/p5js/references/color-systems.md",
+      "sourceUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/skills/creative/p5js/references/color-systems.md",
+      "sha256": "4c210028c4d6e8cf72df7eb0c730b6faea6ac60d627d333991040c42e7f5d699",
+      "bytes": 8647
+    },
+    {
+      "path": "skills/p5js/references/shapes-and-geometry.md",
+      "sourceUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/skills/creative/p5js/references/shapes-and-geometry.md",
+      "sha256": "0a468a75d22322552abffec0cb1305d94ee531c850dd8b590584fd1078d48ed2",
+      "bytes": 7213
+    },
+    {
+      "path": "skills/p5js/references/visual-effects.md",
+      "sourceUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/e4d86423856350825a3a0dc4f52aed89759e11bd/skills/creative/p5js/references/visual-effects.md",
+      "sha256": "644cbaf5f91b44dfa54ec125ccdff44c445f454781ff98edd316d30df258db56",
+      "bytes": 23456
+    }
+  ],
+  "localAdaptation": {
+    "retained": "完整保存並未修改上列五份上游 references；保存上游 LICENSE 與 Nous Research attribution。",
+    "authoredFile": "skills/p5js/SKILL.md",
+    "changes": [
+      "以本機 p5.js 1.11.3 受控 renderer 取代上游 CDN、互動預覽及多種匯出流程。",
+      "固定 window.mvReady 與 async window.renderFrame({frame,time,fps,width,height,level}) 畫格介面，採用音訊預分析 RMS 與 FFmpeg 合成 MP4。",
+      "限制專案、音訊、輸出路徑至 factories/mv/projects、factories/mv/assets、factories/mv/output；控制器與 FFmpeg 經 macOS sandbox-exec 執行，採環境 allowlist、隔離 HOME/TMPDIR、限定工作目錄寫入及 loopback 網路；Chrome 使用新鮮 profile 與原生 sandbox，但不受控制器的全目錄限制。頁面 CSP sandbox 禁止 popup，入口拒絕停用 sandbox 的繼承設定；取消時終止控制器與 FFmpeg process group 並清除本次 session。影片完成後以 hard link 原子發布且不覆寫，因此 output 與 .runtime 必須位於同一檔案系統。",
+      "只引用本機實際保留的五份參考文件；參考內容內的遠端載入、p5.js 2.x、音訊輸入或其他匯出示例不覆蓋本機限制。",
+      "在 factories/mv/ 使用 npm run render -- projects/demo assets/demo-tone.wav output/movie.mp4 呼叫受控 wrapper；共用製程、demo、工具鎖檔及技能授權納入 Git，其他專案、專用素材與腳本、node_modules、output、快取及 .runtime 由根 .gitignore 排除。",
+      "預期 Node 24.21.0、p5 1.11.3、puppeteer-core 25.13.0、FFmpeg/ffprobe 8.0.1、Chrome 155.0.8059.39；tools.lock.json 鎖定本機主執行檔路徑與雜湊，但不封存 OS 或所有動態函式庫。2026-10-13 已從待提交內容的獨立暫存副本安裝 npm 依賴並實跑 demo，驗證產出為 2 秒、320×180、5 fps 的 H.264/AAC MP4；驗證使用本機已審閱工具，不代表其他機器可免設定執行。"
+    ],
+    "excluded": [
+      "沒有保存上游 SKILL.md、README、scripts、viewer、templates 或 installer。",
+      "沒有下載或執行上游 scripts、viewer 或 installer，沒有全域安裝 skill。",
+      "未保留的上游可執行內容未經檢查；本 provenance 不對其安全性作任何主張。"
+    ],
+    "secrets": "未向上游提供或複製 repo secrets、登入 cookies、憑證或私人檔案。"
+  }
+}

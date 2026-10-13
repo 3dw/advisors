@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "tools": {
+    "node": {
+      "path": "/Users/bestian/.vite-plus/js_runtime/node/24.21.0/bin/node",
+      "version": "v24.21.0",
+      "sha256": "e4b5a3af0e05c75de2eae013904145f40fe7fc2a6e6f17510128bf45cca4e79b"
+    },
+    "ffmpeg": {
+      "path": "/opt/homebrew/Cellar/ffmpeg/8.0.1_2/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    },
+    "ffprobe": {
+      "path": "/opt/homebrew/Cellar/ffmpeg/8.0.1_2/bin/ffprobe",
+      "version": "8.0.1",
+      "sha256": "6057aa35c4dc2686b5368680c36fe39df2ea82e8adca509d2b04994c65280642"
+    },
+    "chrome": {
+      "path": "/Users/bestian/Documents/GitHub/advisors/factories/mv/.browser-cache/155.0.8059.39/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+      "version": "155.0.8059.39",
+      "sha256": "93039c9fbd18302515c40f1d9d147967402ac67aa0e81b44c623f889315d9285",
+      "sourceUrl": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.39/mac-arm64/chrome-headless-shell-mac-arm64.zip",
+      "archiveSha256": "b3e093c06001c41e68decbc8dd4a62f9efe4bf4e4dd247a686ea531863448d75"
+    }
+  },
+  "note": "固定主執行檔，不宣稱封存整個作業系統或所有動態函式庫；工具更新後需重新審閱。"
+}

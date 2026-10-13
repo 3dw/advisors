@@ -1,0 +1,19 @@
+# 影片製程依賴與輸出
+/factories/mv/node_modules/
+/factories/mv/output/
+
+# 影片專案只保留 demo，其餘留在本機
+/factories/mv/projects/*
+!/factories/mv/projects/demo/
+
+# 個別影片專用素材與製作腳本留在本機
+/factories/mv/assets/civic-talk-*
+/factories/mv/scripts/compose-song.py
+/factories/mv/scripts/add-logo.mjs
+/factories/mv/requirements-song.txt
+
+# 影片製程本機工具快取與執行環境
+/factories/mv/.browser-cache/
+/factories/mv/.npm-cache/
+/factories/mv/.npm-global-empty
+/factories/mv/.runtime/
