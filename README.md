@@ -23,8 +23,11 @@
 | 溝通顧問 | [`personas/communication-advisor.md`](personas/communication-advisor.md) | 用薩提爾模式兼顧雙方感受與事情本身，把難談的對話談成雙贏 |
 | 教學顧問 | [`personas/teaching-advisor.md`](personas/teaching-advisor.md) | 把學習目標轉化成可實施、可評量的課程與教學活動 |
 | 影片設計顧問 | [`personas/video-design-advisor.md`](personas/video-design-advisor.md) | 把溝通目標轉化成可製作的影片概念、腳本、分鏡與剪輯方案 |
+| 農業顧問 | [`personas/agriculture-advisor.md`](personas/agriculture-advisor.md) | 規畫作物生產、改善田間管理並評估農場經營風險 |
+| 園藝顧問 | [`personas/gardening-advisor.md`](personas/gardening-advisor.md) | 選擇適合環境的植物、規畫綠化空間並建立照護習慣 |
+| 育兒顧問 | [`personas/parenting-advisor.md`](personas/parenting-advisor.md) | 理解兒童發展、安排日常照顧，適孩子的成長階段，調整界限與自主空間 |
 
-> 財務、法務、人資、溝通等角色提供的是一般性資訊與教育，非正式專業意見；重大決策請諮詢合格的會計師、律師、心理師或相關專業人士。
+> 財務、法務、人資、溝通、農業、園藝、育兒等角色提供的是一般性資訊與教育，非正式專業意見；重大決策或涉及安全、健康與發展的疑慮，請諮詢合格的會計師、律師、心理師、農業或園藝專業人員、兒科醫師或相關專業人士。
 
 ## 新增角色
 
