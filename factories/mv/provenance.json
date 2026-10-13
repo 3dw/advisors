@@ -21,6 +21,28 @@
     "generationCommand": "ffmpeg -v error -y -f lavfi -i sine=frequency=440:sample_rate=48000:duration=2 -af afade=t=in:st=0:d=0.1,afade=t=out:st=1.8:d=0.2 -c:a pcm_s16le assets/demo-tone.wav",
     "sha256": "bad00e137112cd8748624204bd8ca13d639a0857c8bb0f54ea6c7255daf79763"
   },
+  "originalAnimation": {
+    "created": "2026-10-14",
+    "scope": "情緒與動作採可重複取樣的時間函式；圓形角色、短髮／鮑伯頭／長髮／馬尾的幾何造型、故事、構圖與中文台詞為本專案原創內容。性別為獨立身分設定，不使用第三方角色圖片或造型素材。",
+    "files": ["lib/emotion.js", "lib/motion.js", "lib/character.js", "lib/speech.py", "projects/demo/appearance.js", "projects/demo/story.js", "projects/demo/sketch.js", "projects/demo/narration.json"]
+  },
+  "offlineSpeech": {
+    "engine": "kokoro==0.9.4",
+    "engineLicense": "Apache-2.0",
+    "engineSource": "https://github.com/hexgrad/kokoro",
+    "g2p": "misaki==0.9.4",
+    "g2pLicense": "Apache-2.0",
+    "model": "hexgrad/Kokoro-82M-v1.1-zh",
+    "modelRevision": "01e7505bd6a7a2ac4975463114c3a7650a9f7218",
+    "modelLicense": "Apache-2.0",
+    "manifest": "voice-model.lock.json",
+    "voice": "zf_001",
+    "dependencyVersions": "requirements-voice.txt",
+    "distribution": "Git 僅保存自行撰寫的函式、入口、台詞、測試與來源／版本清單；不保存 Python 相依套件、模型權重或合成人聲。各相依套件不一定使用 Apache-2.0，另行重散布時須遵循各自授權。模型授權依其作者公開聲明，非獨立法律保證。",
+    "runtime": "明確準備步驟才下載固定模型；每次推論驗證大小與雜湊，以本機 CPU、weights_only 載入及禁止網路的 sandbox 執行。不使用 Apple 系統聲音、雲端語音 API 或真人聲音複製。",
+    "limits": "以語速及句間停頓控制旁白節奏，不宣稱原生情緒演技、臺灣口音或音素級對嘴。長台詞按音素限制切句，不截斷；實際語音重疊、越界、覆寫或模型校驗失敗時停止。",
+    "verification": "2026-10-14 已實跑固定中文模型，產出 20 秒、24 kHz、單聲道 WAV；完整 demo 產出 600 畫格、1280×720、30 fps、H.264/AAC MP4。瀏覽器驗證同一時間亂序重繪一致及音量影響嘴型，並檢查影片擔心、揮手、跳躍畫格。11 項 JavaScript、4 項 Python 行為測試通過；另實跑拒絕覆寫、外部輸出路徑與取消不發布音檔。"
+  },
   "downloadedFiles": [
     {
       "path": "skills/p5js/references/core-api.md",

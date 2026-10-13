@@ -2,6 +2,11 @@
 /factories/mv/node_modules/
 /factories/mv/output/
 
+# 可重建的合成語音與實際台詞時序
+/factories/mv/assets/speech/
+/factories/mv/lib/__pycache__/
+/factories/mv/tests/__pycache__/
+
 # 影片專案只保留 demo，其餘留在本機
 /factories/mv/projects/*
 !/factories/mv/projects/demo/

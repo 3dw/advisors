@@ -1,0 +1,8 @@
+{
+  "duration": 20,
+  "cues": [
+    { "at": 1, "text": "咦，前面有一顆小小的光點。", "emotion": "curious" },
+    { "at": 7, "text": "別擔心，先深呼吸，再慢慢靠近。", "emotion": "calm" },
+    { "at": 13, "text": "原來是新朋友，一起出發吧！", "emotion": "joy" }
+  ]
+}

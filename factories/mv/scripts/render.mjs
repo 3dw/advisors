@@ -59,14 +59,21 @@ async function render() {
 
   const scratch = await mkdtemp(join(process.env.MV_SESSION_DIR, 'render-'));
   const vendor = join(root, 'node_modules/p5/lib/p5.min.js');
+  const libraries = new Map([
+    ['/lib/emotion.js', join(root, 'lib/emotion.js')],
+    ['/lib/motion.js', join(root, 'lib/motion.js')],
+    ['/lib/character.js', join(root, 'lib/character.js')],
+  ]);
   const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
   const server = createServer(async (request, response) => {
     console.log('HTTP', request.method, request.url);
     try {
       if (request.method !== 'GET') { response.writeHead(405).end(); return; }
       const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-      const path = pathname === '/vendor/p5.min.js' ? vendor : await realpath(resolve(project, `.${pathname === '/' ? '/index.html' : pathname}`));
-      if (path !== vendor && !inside(project, path)) { response.writeHead(403).end(); return; }
+      const library = libraries.get(pathname);
+      const path = pathname === '/vendor/p5.min.js' ? vendor : await realpath(library ?? resolve(project, `.${pathname === '/' ? '/index.html' : pathname}`));
+      const base = library ? join(root, 'lib') : project;
+      if (path !== vendor && !inside(base, path)) { response.writeHead(403).end(); return; }
       if (!(await stat(path)).isFile()) { response.writeHead(404).end(); return; }
       response.writeHead(200, {
         'Content-Type': mime[extname(path)] ?? 'application/octet-stream',

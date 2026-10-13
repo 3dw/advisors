@@ -1,13 +1,16 @@
 {
   "name": "local-p5-mv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": "24.21.0"
   },
   "scripts": {
-    "render": "node scripts/run.mjs"
+    "render": "node scripts/run.mjs",
+    "speech:prepare": "node scripts/speech.mjs --prepare",
+    "speech": "node scripts/speech.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "p5": "1.11.3",
