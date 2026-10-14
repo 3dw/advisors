@@ -35,6 +35,8 @@
 
 ## 影片製程
 
+本專案中影片製程的設計概念，受啟發於此開源專案：https://github.com/JohnHeibel/ClaudeAnimationBase
+
 `factories/mv/` 是獨立的本機 p5.js 動畫與影片製作工具，依音訊逐格渲染並合成 MP4。包含情緒、動作、角色造型與離線中文旁白函式、共用渲染腳本、npm／Python 依賴鎖檔、工具與語音模型鎖檔、原創 demo，以及 p5.js 技能與來源授權記錄。
 
 在 `factories/mv/` 目錄執行：
