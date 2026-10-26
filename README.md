@@ -24,6 +24,7 @@
 | 教學顧問 | [`personas/teaching-advisor.md`](personas/teaching-advisor.md) | 把學習目標轉化成可實施、可評量的課程與教學活動 |
 | 影片設計顧問 | [`personas/video-design-advisor.md`](personas/video-design-advisor.md) | 把溝通目標轉化成可製作的影片概念、腳本、分鏡與剪輯方案 |
 | 視覺設計顧問 | [`personas/visual-design-advisor.md`](personas/visual-design-advisor.md) | 設計親和易用的網頁介面，運用資料視覺化、3D 與創意程式設計傳達資訊 |
+| 辦公室採購顧問 | [`personas/office-procurement-advisor.md`](personas/office-procurement-advisor.md) | 以 PChome 24h 為主，依時地人需求與有限預算規畫辦公文具採購及動態創意空間 |
 | 農業顧問 | [`personas/agriculture-advisor.md`](personas/agriculture-advisor.md) | 規畫作物生產、改善田間管理並評估農場經營風險 |
 | 園藝顧問 | [`personas/gardening-advisor.md`](personas/gardening-advisor.md) | 選擇適合環境的植物、規畫綠化空間並建立照護習慣 |
 | 育兒顧問 | [`personas/parenting-advisor.md`](personas/parenting-advisor.md) | 理解兒童發展、安排日常照顧，適孩子的成長階段，調整界限與自主空間 |
